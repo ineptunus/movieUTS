@@ -2,39 +2,38 @@
 
 ## About Laravel Movie DB
 
-This is a movie database system built with Laravel for the Software Construction and Evolution course in the Software Engineering Technology Program, Department of Information Technology, Politeknik Negeri Padang.
+Ini adalah sistem basis data film yang dibangun dengan Laravel untuk mata kuliah Konstruksi dan Evolusi Perangkat Lunak pada Program Teknologi Rekayasa Perangkat Lunak, Jurusan Teknologi Informasi, Politeknik Negeri Padang.
 
-## Refactoring Changes
+## Perubahan Refactoring
 
-The codebase has undergone significant refactoring to improve code quality, maintainability, and security. The following improvements were implemented:
+Basis kode telah mengalami perbaikan signifikan untuk meningkatkan kualitas kode, kemudahan perawatan, dan keamanan. Perbaikan berikut telah diterapkan:
 
-### 1. Consistent URL Generation
-- Replaced hardcoded URLs with Laravel's named routes using the `route()` helper
-- Added missing route names in the routes file
-- Improved maintainability by centralizing route definitions
+### 1. Pembuatan URL yang Konsisten
+- Mengganti URL hardcoded dengan rute bernama Laravel menggunakan helper `route()`
+- Menambahkan nama rute yang hilang dalam file rute
+- Meningkatkan kemudahan perawatan dengan memusatkan definisi rute
 
-### 2. Consistent Data Access Patterns
-- Standardized model property access using object notation (`$movie->property`) instead of mixing with array notation
-- Improved code readability and reduced potential errors
+### 2. Pola Akses Data yang Konsisten
+- Akses properti model terstandarisasi menggunakan notasi objek (`$movie->property`) alih-alih mencampurnya dengan notasi array
+- Peningkatan keterbacaan kode dan pengurangan potensi kesalahan
 
-### 3. Enhanced Image Handling
-- Implemented the `asset()` helper for all image paths
-- Added descriptive alt text for images to improve accessibility
-- Centralized image path construction
+### 3. Penanganan Gambar yang Ditingkatkan
+- Menerapkan helper `asset()` untuk semua jalur gambar
+- Menambahkan teks alt deskriptif untuk gambar guna meningkatkan aksesibilitas
+- Konstruksi jalur gambar terpusat
 
-### 4. Improved Form Structure
-- Added validation error display to all forms
-- Implemented old input retention to preserve user input on validation errors
-- Added consistent form actions and methods
-- Added cancel/back buttons for better user experience
+### 4. Struktur Bentuk yang Ditingkatkan
+- Menambahkan tampilan kesalahan validasi ke semua formulir
+- Menerapkan retensi input lama untuk menyimpan input pengguna pada kesalahan validasi
+- Menambahkan tindakan dan metode formulir yang konsisten
+- Menambahkan tombol batal/kembali untuk pengalaman pengguna yang lebih baik
 
-### 5. Security Enhancements
-- Implemented proper CSRF protection for all forms
-- Changed delete operations from GET to POST/DELETE requests
-- Added confirmation dialogs for destructive actions
+### 5. Peningkatan Keamanan
+- Menerapkan perlindungan CSRF yang tepat untuk semua formulir
+- Mengubah operasi penghapusan dari GET ke permintaan POST/DELETE
+- Menambahkan dialog konfirmasi untuk tindakan yang merusak
 
-### 6. Code Organization
-- Reduced code duplication across views
-- Improved naming consistency
-- Enhanced readability with proper indentation and spacing
-
+### 6. Organisasi Kode
+- Mengurangi duplikasi kode di seluruh tampilan
+- Peningkatan konsistensi penamaan
+- Peningkatan keterbacaan dengan indentasi dan spasi yang tepat

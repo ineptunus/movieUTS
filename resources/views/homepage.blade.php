@@ -17,13 +17,13 @@
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="/images/{{ $movie['foto_sampul'] }}" class="img-fluid rounded-start" alt="...">
-            </div>
+                <img src="{{ asset('images/' . $movie->foto_sampul) }}" class="img-fluid rounded-start" alt="{{ $movie->judul }} cover image">
+              </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">{{ $movie['judul'] }}</h5>
-                        <p class="card-text">{{ $movie['sinopsis'] }}</p>
-                        <a href="/movie/{{ $movie['id'] }}" class="btn btn-success">Lihat Selanjutnya</a>
+                        <h5 class="card-title">{{ $movie->judul }}</h5>
+                        <p class="card-text">{{ $movie->sinopsis }}</p>
+                        <a href="{{ route('movie.detail', ['id' => $movie->id]) }}" class="btn btn-success">Lihat Selanjutnya</a>
                     </div>
                 </div>
             </div>

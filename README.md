@@ -1,49 +1,40 @@
+# Laravel Movie Database
+
 ## About Laravel Movie DB
 
-Ini adalah sistem database movie menggunakan laravel untuk mata kuliah Konstruksi dan Evolusi Perangkat Lunak Prodi Teknologi Rekayasa Perangkat Lunak Jurusan Teknologi Informasi Politeknik Negeri Padang.
+This is a movie database system built with Laravel for the Software Construction and Evolution course in the Software Engineering Technology Program, Department of Information Technology, Politeknik Negeri Padang.
 
-Silahkan clone repository ini ke PC Anda.
-Jika Anda baru saja meng-clone repository proyek Laravel dan ingin menjalankan perintah migrasi, ada beberapa langkah yang perlu Anda lakukan terlebih dahulu. Berikut adalah langkah-langkahnya:
+## Refactoring Changes
 
-1. **Composer Install:**
-   Pastikan Anda telah menginstal Composer di sistem Anda. Kemudian, jalankan perintah berikut di terminal di direktori proyek Laravel Anda untuk menginstal dependensi:
+The codebase has undergone significant refactoring to improve code quality, maintainability, and security. The following improvements were implemented:
 
-    composer install
+### 1. Consistent URL Generation
+- Replaced hardcoded URLs with Laravel's named routes using the `route()` helper
+- Added missing route names in the routes file
+- Improved maintainability by centralizing route definitions
 
-2. **Environment File:**
-   Duplikat file `.env.example` menjadi `.env` di direktori proyek Anda. Sesuaikan pengaturan database dan konfigurasi lainnya di file `.env` sesuai dengan kebutuhan Anda.
+### 2. Consistent Data Access Patterns
+- Standardized model property access using object notation (`$movie->property`) instead of mixing with array notation
+- Improved code readability and reduced potential errors
 
-    cp .env.example .env
+### 3. Enhanced Image Handling
+- Implemented the `asset()` helper for all image paths
+- Added descriptive alt text for images to improve accessibility
+- Centralized image path construction
 
-3. **Generate Application Key:**
-   Laravel menggunakan kunci aplikasi untuk enkripsi data. Jalankan perintah berikut untuk menghasilkan kunci aplikasi:
+### 4. Improved Form Structure
+- Added validation error display to all forms
+- Implemented old input retention to preserve user input on validation errors
+- Added consistent form actions and methods
+- Added cancel/back buttons for better user experience
 
-    php artisan key:generate
+### 5. Security Enhancements
+- Implemented proper CSRF protection for all forms
+- Changed delete operations from GET to POST/DELETE requests
+- Added confirmation dialogs for destructive actions
 
-4. **Set Database Connection:**
-   Pastikan bahwa pengaturan koneksi database di file `.env` sesuai dengan konfigurasi database Anda.
+### 6. Code Organization
+- Reduced code duplication across views
+- Improved naming consistency
+- Enhanced readability with proper indentation and spacing
 
-   Contoh: Jika Anda membuat database dbmovie, maka di file `.env` ubahlah `DB_DATABASE=laravel` menjadi `DB_DATABASE=dbmovie`
-
-6. **Run Migrations:**
-   Sekarang Anda dapat menjalankan perintah migrasi untuk membuat tabel-tabel database:
-
-    php artisan migrate
-
-    Perintah ini akan mengeksekusi semua migrasi yang terkandung di proyek Laravel ini.
-
-7. **Run Seeds (Opsional):**
-   Proyek ini menggunakan _seeding_ untuk mengisi basis data awal, jalankan perintah berikut:
-
-    php artisan db:seed
-
-    Perintah ini akan menjalankan seeder yang telah didefinisikan.
-
-8. **Serve Aplikasi:**
-   Setelah langkah-langkah di atas selesai, Anda dapat menjalankan server pengembangan Laravel untuk melihat proyek Anda:
-
-    php artisan serve
-
-    Aplikasi akan berjalan di http://localhost:8000 secara default.
-
-_Credit by: Yori Adi Atma_
